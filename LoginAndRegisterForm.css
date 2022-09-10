@@ -181,8 +181,6 @@ button:hover {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    /* width: 300px;
-    height: 300px; */
     width: 500px;
     height: 130px;
     font-weight: 900;
@@ -192,7 +190,6 @@ button:hover {
     color: white;
     border-radius: 10px;
     text-shadow: 1px 1px 2px black border-radius: 4px;
-    /* box-shadow: rgba(0, 234, 255, 0.823) 5px 15px 5px, */
 }
 
 .closebtn {
