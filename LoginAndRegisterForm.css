@@ -43,7 +43,7 @@ body {
 }
 
 form {
-    height: 600px;
+    height: 580px;
     width: 450px;
     background-color: rgba(255, 255, 255, .13);
     transform: translate(-50%, -50%);
@@ -61,6 +61,7 @@ form {
     form {
         width: 300px;
         padding: 50px 1px;
+        margin-top: 50px;
     }
 
     form.rform {
@@ -68,6 +69,7 @@ form {
     }
 
     .background {
+        margin-top: 50px;
         width: 300px;
 
     }
@@ -89,8 +91,6 @@ form {
 
     .rbutton {
         padding: 15px 0px;
-        /* margin: 0px; */
-        font-size: 10px;
     }
 
     button+button {
