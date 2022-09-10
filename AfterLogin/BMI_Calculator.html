@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- prevent back key after logout -->
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };  
+    </script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ff991d32f9.js" crossorigin="anonymous">
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI_Clc</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        td {
+            position: relative;
+        }
+
+        input {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            resize: none;
+            outline: none;
+            border: none;
+        }
+
+        #bmiclc::after {
+            content: "";
+            width: 100%;
+            height: 3px;
+            background: #f4433f;
+            /* background: rgb(68, 0, 255); */
+            display: block;
+            margin: auto;
+        }
+
+        @media (max-width:799px) {
+            #bmiclc::after {
+                width: 20%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="./WelcomePage.css">
+</head>
+
+<body>
+    <div class="container-fluid ps-0 pe-0 overflow-hidden">
+        <!-- Navigation Bar Section-->
+        <nav class="navbar navbar-expand-md text-center">
+            <div class="container-fluid ">
+                <a class="navbar-brand logo fw-bolder " href="./WelcomePage.html"><span
+                    class="text-info">Tech</span><span class="text-danger text-opacity-75">Gun</span></a>
+                <button class="navbar-toggler btn-outline-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto  font-monospace">
+                        <li class="nav-item mb-2 pe-3">
+                            <a class="nav-link NLink " href="./Academic.html">Academic</a>
+                        </li>
+                        <li class="nav-item mb-2 pe-3">
+                            <a class="nav-link NLink" href="./Extra_curricular.html">ExtraCurricular</a>
+                        </li>
+                        <li class="nav-item mb-2 pe-3">
+                            <a class="nav-link NLink text-primary" id="bmiclc"
+                                href="./BMI_Calculator.html">BMI_Calculator</a>
+                        </li>
+                        <li class="nav-item mb-2 pe-3">
+                            <a class="nav-link NLink" href="./Feedback.html">Feedback</a>
+                        </li>
+                    </ul>
+
+                    <a class="navbar-brand NLink mb-2 fw-bold me-5" href="../index.html">Logout</a>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- BMI Calculator Section Code -->
+        <div class="row justify-content-center pt-4">
+            <div class="col-md-8 col-sm-10  col-lg-6  shadow ps-0 pe-0">
+                <table class="table table-borderless m-0">
+                    <tr>
+                        <th class="text-center display-6 text-success pb-5 fw-bolder" colspan="2">BMI Calculator</th>
+                    </tr>
+                    <tr>
+                        <td class="w-50 fw-semibold">Enter Weight</td>
+                        <td><input type="text" name="wt" placeholder="Kilogram" id="wt" autofocus></td>
+                    </tr>
+                    <tr>
+                        <td class="w-50 fw-semibold">Enter Height</td>
+                        <td><input type="text" name="hig" placeholder="inches" id="hig"></td>
+                    </tr>
+                    <tr>
+                        <td><br></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <!-- <input type="button" id="cal" value="Calculate" /><br> -->
+                            <button type="button" onclick="window.location.reload();" id="rst"
+                                class="btn btn-info shadow-none w-100">Reset</button>
+                        </td>
+                        <td class="text-center">
+                            <button type="button" id="calc" class="btn btn-info shadow-none w-100">Calculate</button>
+                            <!-- <input type="button" id="reset" value="Reset" /><br> -->
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <div class="row justify-content-center pt-5">
+            <div class="col-8 col-md-4 col-sm-8  col-lg-3">
+                <table class="table table-bordered invisible" id="display">
+                    <tr>
+                        <h4>Answer:</h4>
+                        <h5 class="text-center" id="result"></h5><br>
+                    </tr>
+                    <tr>
+                        <th>BMI</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr id="uwt">
+                        <td style="background-color: #FFE189;">
+                            <=18.4 </td>
+                        <td>UnderWeight</td>
+                    </tr>
+                    <tr id="nwt">
+                        <td style="background-color: #8CD47E;">18.5-24.9</td>
+                        <td>Normal</td>
+                    </tr>
+                    <tr id="owt">
+                        <td style="background-color: #FFB54C ;">25.0-39.9</td>
+                        <td>OverWeight</td>
+                    </tr>
+                    <tr id="obe">
+                        <td style="background-color: #FF6961;">>=40</td>
+                        <td>Obese</td>
+                    </tr>
+
+                </table>
+                <!-- <br><br><br> -->
+            </div>
+        </div>
+
+        <!-- footer section -->
+        <footer class="text-center text-lg-start" style="background-color: rgba(128, 128, 128, 0.501) ;">
+
+            <div class="container p-4 pb-0">
+                <section>
+                    <div class="row">
+                        <div class="col-md-3 text-md-start col-lg-3 col-xl-3 mx-auto mt-3">
+                            <h6 class="text-uppercase mb-4 fw-bold">TechGun</h6>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, nobis!</p>
+                        </div>
+                        <hr class="w-100 clearfix m-0 p-0 d-md-none">
+                        <div class="col-md-2 text-md-start col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h6 class="text-uppercase mb-4 fw-bold"> Products</h6>
+                            <p><a class="text-decoration-none text-black" href="#">BMI Calculator</a></p>
+                            <p><a class="text-decoration-none text-black" href="#">Feedback</a></p>
+
+                        </div>
+                        <hr class="w-100 clearfix d-md-none">
+                        <div class="col-md-4 text-md-start col-lg-3 col-xl-3 mx-auto  mt-3">
+                            <h6 class="text-uppercase mb-4 fw-bold">Contact</h6>
+                            <p><i class="fas fa-home mr-3"></i> Lucknow, Aminabad 226018, UP</p>
+                            <p><i class="fas fa-envelope mr-3"></i> techgun@gmail.com</p>
+                            <p><i class="fas fa-home mr-3"></i> +917985782615</p>
+                        </div>
+                        <hr class="w-100 clearfix d-md-none">
+                        <div class="col-md-3 text-md-start  col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h6 class="text-uppercase mb-4 fw-bold">Follow Us</h6>
+                            <p class="mb-0">
+                                <a class="btn btn-primary m-1" style="background-color: #3b5998;" href="#"
+                                    role="button">
+                                    <i class="fab fa-facebook-f"></i></a> Facebook
+                            </p>
+                            <p class="mb-0">
+                                <a class="btn btn-primary m-1" style="background-color: #3b5998;" href="#"
+                                    role="button">
+                                    <i class="fab fa-twitter"></i></a> Twitter
+                            </p>
+                            <p class="mb-0">
+                                <a class="btn btn-primary m-1" style="background-color: #3b5998;" href="#"
+                                    role="button">
+                                    <i class="fab fa-instagram"></i> </a> Instagram
+                            </p>
+
+                        </div>
+
+                    </div>
+                </section>
+                <p class="text-center h5 pt-2 pb-4 fw-bold text-white">©️ 2022 TopGun. All Right Reserved | Terms and
+                    Condition</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        window.onload = () => {
+            let calc = document.querySelector("#calc");
+            // let rst=document.querySelector("#rst");
+            calc.addEventListener("click", BMIClc);
+
+        };
+        const BMIClc = () => {
+
+            let dis = document.querySelector("#display");
+            let hie = parseInt(document.querySelector("#hig").value);
+            let wet = parseInt(document.querySelector("#wt").value);
+            //    console.log(hie +""+ wet);
+
+            let result = document.querySelector("#result");
+            let uwtStyle = document.querySelector("#uwt");
+            let nwtStyle = document.querySelector("#nwt");
+            let owtStyle = document.querySelector("#owt");
+            let obeStyle = document.querySelector("#obe");
+            dis.style.cssText += 'visibility: visible !important;';
+            // uwtStyle.style.cssText+='background-color:transparent;border:none';
+            // dis.style.cssText+='display:inline !important;';
+            if (wet === "" || isNaN(wet)) {
+                result.innerHTML = "Enter A Valid Weight"
+            }
+            else if (hie === "" || isNaN(hie)) {
+                result.innerHTML = "Enter A Valid Height"
+            }
+            else {
+                let bmi = ((wet) / ((hie * hie * 2.54 * 2.54) / 10000)).toFixed(2);
+                if (bmi <= 18.49) {
+                    result.innerHTML = `${bmi} UnderWeight<span style="font-size:40px">😮</span>`;
+                    uwtStyle.style.cssText += 'background-color:yellow;border:2px solid gray; border-right:none';
+                } else if (bmi >= 18.5 && bmi <= 24.99) {
+                    result.innerHTML = `${bmi} Normal<span style="font-size:40px">🤩</span> `;
+                    nwtStyle.style.cssText += 'background-color:yellow;border:2px solid gray; border-right:none';
+
+                } else if (bmi >= 25.0 && bmi <= 39.99) {
+                    result.innerHTML = `${bmi} OverWeight<span style="font-size:40px">😨</span>`;
+                    owtStyle.style.cssText += 'background-color:yellow;border:2px solid gray; border-right:none';
+
+                } else {
+                    result.innerHTML = `${bmi} Obese<span style="font-size:40px">😭</span>`
+                    obeStyle.style.cssText += 'background-color:yellow;border:2px solid gray; border-right:none';
+
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

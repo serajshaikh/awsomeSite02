@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExtraCurricular</title>
+    <!-- prevent back key after logout -->
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };  
+    </script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ff991d32f9.js" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="./WelcomePage.css">
+
+    <style>
+        #extra-curr::after {
+            content: "";
+            width: 100%;
+            height: 3px;
+            background: #f4433f;
+            /* background: rgb(68, 0, 255); */
+            display: block;
+            margin: auto;
+        }
+
+        @media (max-width:799px) {
+            #extra-curr::after {
+                width: 20%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid ps-0 pe-0 overflow-hidden">
+
+
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-md text-center ">
+            <div class="container-fluid ">
+                <a class="navbar-brand logo fw-bolder " href="./WelcomePage.html"><span
+                    class="text-info">Tech</span><span class="text-danger text-opacity-75">Gun</span></a>
+                <button class="navbar-toggler btn-outline-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto  font-monospace">
+                        <li class="nav-item mb-2 pe-3">
+                            <a class="nav-link NLink " href="./Academic.html">Academic</a>
+                        </li>
+                        <li class="nav-item mb-2 pe-3">
+                            <a class="nav-link NLink text-primary" id="extra-curr"
+                                href="./Extra_curricular.html">ExtraCurricular</a>
+                        </li>
+                        <li class="nav-item mb-2 pe-3">
+                            <a class="nav-link NLink" href="./BMI_Calculator.html">BMI_Calculator</a>
+                        </li>
+                        <li class="nav-item mb-2 pe-3">
+                            <a class="nav-link NLink" href="./Feedback.html">Feedback</a>
+                        </li>
+                    </ul>
+
+                    <a class="navbar-brand NLink mb-2 fw-bold me-5" href="../index.html">Logout</a>
+                </div>
+
+            </div>
+        </nav>
+
+
+        <!-- Extra Curricular activity code -->
+        <div class="row justify-content-center ">
+            <div class="col-md-10 col-lg-8 col-xl-7 ">
+                <div class="row g-3 mt-5 fs-5 mb-5 p-3  bg-white shadow">
+                    <p class="display-4 fw-bolder">Extra Curricular Activity</p>
+                    <p class="h4 fw-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+                        debitis ullam, quis vel expedita in aperiam blanditiis distinctio enim qui est cupiditate
+                        dignissimos eius unde. Rerum consectetur illum quos fugiat!</p>
+                    <hr>
+                    <dl class="row p-0 p-sm-5 m-0">
+                        <dt class="col-sm-12 p-0">Playing Cricket</dt>
+                        <dd class="col-sm-10 mx-sm-auto p-0">Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit.
+                            Nobis officia nulla neque odio, pariatur veritatis sint et officiis necessitatibus
+                            blanditiis..</dd>
+                        <dt class="col-sm-12 p-0">Playing Football</dt>
+                        <dd class="col-sm-10 mx-sm-auto p-0">Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit.
+                            Nobis officia nulla neque odio, pariatur veritatis sint et officiis necessitatibus
+                            blanditiis..</dd>
+                        <dt class="col-sm-12 p-0">Reading</dt>
+                        <dd class="col-sm-10 mx-sm-auto p-0">Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit.
+                            Nobis officia nulla neque odio, pariatur veritatis sint et officiis necessitatibus
+                            blanditiis..</dd>
+                        <dt class="col-sm-12 p-0">Writing</dt>
+                        <dd class="col-sm-10 mx-sm-auto p-0">Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit.
+                            Nobis officia nulla neque odio, pariatur veritatis sint et officiis necessitatibus
+                            blanditiis..</dd>
+                        <dt class="col-sm-12 p-0">Watching Cricket & Movies</dt>
+                        <dd class="col-sm-10 mx-sm-auto p-0">Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit.
+                            Nobis officia nulla neque odio, pariatur veritatis sint et officiis necessitatibus
+                            blanditiis..</dd>
+                        <dt class="col-sm-12 p-0">Listening Poem & Music</dt>
+                        <dd class="col-sm-10 mx-sm-auto p-0">Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit.
+                            Nobis officia nulla neque odio, pariatur veritatis sint et officiis necessitatibus
+                            blanditiis..</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- footer section -->
+        <footer class="text-center text-lg-start" style="background-color: rgba(128, 128, 128, 0.501) ;">
+
+            <div class="container p-4 pb-0">
+                <section>
+                    <div class="row">
+                        <div class="col-md-3 text-md-start col-lg-3 col-xl-3 mx-auto mt-3">
+                            <h6 class="text-uppercase mb-4 fw-bold">TechGun</h6>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, nobis!</p>
+                        </div>
+                        <hr class="w-100 clearfix m-0 p-0 d-md-none">
+                        <div class="col-md-2 text-md-start col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h6 class="text-uppercase mb-4 fw-bold"> Products</h6>
+                            <p><a class="text-decoration-none text-black" href="#">BMI Calculator</a></p>
+                            <p><a class="text-decoration-none text-black" href="#">Feedback</a></p>
+
+                        </div>
+                        <hr class="w-100 clearfix d-md-none">
+                        <div class="col-md-4 text-md-start col-lg-3 col-xl-3 mx-auto  mt-3">
+                            <h6 class="text-uppercase mb-4 fw-bold">Contact</h6>
+                            <p><i class="fas fa-home mr-3"></i> Lucknow, Aminabad 226018, UP</p>
+                            <p><i class="fas fa-envelope mr-3"></i> techgun@gmail.com</p>
+                            <p><i class="fas fa-home mr-3"></i> +917985782615</p>
+                        </div>
+                        <hr class="w-100 clearfix d-md-none">
+                        <div class="col-md-3 text-md-start  col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h6 class="text-uppercase mb-4 fw-bold">Follow Us</h6>
+                            <p class="mb-0">
+                                <a class="btn btn-primary m-1" style="background-color: #3b5998;" href="#"
+                                    role="button">
+                                    <i class="fab fa-facebook-f"></i></a> Facebook
+                            </p>
+                            <p class="mb-0">
+                                <a class="btn btn-primary m-1" style="background-color: #3b5998;" href="#"
+                                    role="button">
+                                    <i class="fab fa-twitter"></i></a> Twitter
+                            </p>
+                            <p class="mb-0">
+                                <a class="btn btn-primary m-1" style="background-color: #3b5998;" href="#"
+                                    role="button">
+                                    <i class="fab fa-instagram"></i> </a> Instagram
+                            </p>
+
+                        </div>
+
+                    </div>
+                </section>
+                <p class="text-center h5 pt-2 pb-4 fw-bold text-white">©️ 2022 TopGun. All Right Reserved | Terms and
+                    Condition</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

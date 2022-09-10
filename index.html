@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .rlabel {
+            margin-top: 20px;
+        }
+
+        .rbutton {
+            margin-top: 20px;
+            width: 49%;
+            float: left;
+        }
+
+        button+button {
+            margin-left: 8px;
+        }
+    </style>
+    <link rel="stylesheet" href="./LoginAndRegisterForm.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+</head>
+
+<body>
+    <div id="Container">
+        <div>
+            <div class="background l-background">
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div id="root" class="l-overlay">
+                <form class="lform">
+                    <h3>Login Here</h3>
+    
+                    <label for="loginusername">User Name</label>
+                    <input type="text" placeholder="Enter Name, Email or phone" id="loginUser">
+    
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="password" id="psw">
+    
+                    <button onclick="hasSubscription(event)"> LogIn</button>
+                    <p style="font-size:25px ;padding-top:10px">Don't have Account?</p>
+                    <button onclick="moveLeftLogin(event)" style="margin-top:15px;"> Register</button>
+                </form>
+            </div>
+        </div>
+        <div class="r-overlay">
+            <form class="rform">
+                <h3>Register Here</h3>
+
+                <label class="rlabel" for="username">User Name</label>
+                <input type="text" placeholder="Enter Your Name" id="username">
+
+                <label class="rlabel" for="username">User Email / Phone Number</label>
+                <input type="email" placeholder="Email or phone" id="useremail">
+
+                <label class="rlabel" for="password">Password</label>
+                <input type="text" placeholder="Enter New Password" id="password">
+
+                <label class="rlabel" for="password">Conform Password</label>
+                <input type="password" placeholder="Enter Password Again" id="cnfPassword">
+
+                <button class="rbutton"> Register</button><button onclick="moveRightLogin(event)"
+                    class="rbutton">LogIn</button>
+            </form>
+        </div>
+
+        <div class="outerpart">
+            <div class="alert success">
+                <span class="closebtn" onclick="forAlert(event)">&times;</span>
+                <span>Welcome To My Site !<br>🤩Seraj🤩</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function moveLeftLogin(e) {
+            let stl = document.querySelector(".r-overlay");
+            let stx = document.querySelector(".l-overlay");
+            stl.style.cssText += "top:50%;left:50%;transition:.8s linear"
+            stx.style.cssText += "top:50%;left:-90%;transition:.8s linear"
+            e.preventDefault();
+        }
+        function moveRightLogin(e) {
+            let stl = document.querySelector(".r-overlay");
+            let stx = document.querySelector(".l-overlay");
+            stl.style.cssText += "top:50%;left:-90%;transition:.8s linear"
+            stx.style.cssText += "top:50%;left:50%;transition:.8s linear"
+            e.preventDefault();
+        }
+        function forAlert(e) {
+            let respo = document.querySelector(".success");
+            respo.style.display = 'none';
+            window.location = "./AfterLogin/WelcomePage.html";
+            e.preventDefault();
+        }
+
+        function hasSubscription(e) {
+            const name = document.getElementById("loginUser").value;
+            const pass = document.getElementById("psw").value;
+            // console.log(name)
+            if (name === "seraj" && pass === '123') {
+                let respo = document.querySelector(".success");
+                let bdy = document.getElementById("root");
+                bdy.style.display = "none";
+                respo.style.display = 'block';
+                // alert("Welcome to Home page");
+            } else {
+                alert("Enter Correct password and Name")
+            }
+            e.preventDefault();
+        }
+
+    </script>
+</body>
+
+</html>
