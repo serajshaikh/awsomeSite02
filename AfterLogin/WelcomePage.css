@@ -3,21 +3,10 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    /* background-image: url(../img/bg2.jpg); */
-    /* background-image: url(../img/bg3.jpg); */
-    /* background-image: url(../img/bground.jpg); */
-    /* background-image: url(../img/img4.webp);
-    background-size: cover;
-    background-attachment: fixed; */
-}
+
 
 
 /* Nav link Section */
-nav{
-    /* background-color: rgba(113, 113, 255, 0.819); */
-    /* background-image: linear-gradient(to right ,rgba(47, 99, 142, 0.663),rgba(221, 154, 255, 0.315),rgba(47, 99, 142, 0.663)); */
-    }
 .logo{
     font-size: 50px !important;
     padding-left: 50px;

@@ -43,13 +43,13 @@ body {
 }
 
 form {
-    height: 580px;
-    width: 450px;
+    height: 560px;
+    width: 400px;
     background-color: rgba(255, 255, 255, .13);
     transform: translate(-50%, -50%);
     border: 2px solid rgb(255, 255, 255, 0.1);
     box-shadow: 0 0 40px rgb(8, 7, 16, 0.6);
-    padding: 50px 35px;
+    padding: 30px 35px;
     border-radius: 10px;
     backdrop-filter: blur(8px);
     margin-left: auto;
@@ -59,13 +59,15 @@ form {
 
 @media (max-width:449px) {
     form {
+        height: 520px;
         width: 300px;
-        padding: 50px 1px;
+        padding: 10px 1px;
         margin-top: 50px;
     }
 
     form.rform {
-        padding: 50px 1px;
+        height: 580px;
+        padding: 10px 2px;
     }
 
     .background {
@@ -81,12 +83,12 @@ form {
     }
 
     button {
-        padding: 10px 0px;
+        padding: 15px 0px;
         font-size: 10px;
     }
 
     input {
-        padding: 0px;
+        padding: 1px;
     }
 
     .rbutton {
@@ -94,14 +96,14 @@ form {
     }
 
     button+button {
-        margin-left: 3px;
+        margin-left: 5px;
     }
 
 }
 
 .rform {
-    height: 650px;
-    padding: 50px 15px;
+    height: 620px;
+    padding: 30px 15px;
 
 }
 
@@ -189,7 +191,7 @@ button:hover {
     background-color: #04AA6D;
     color: white;
     border-radius: 10px;
-    text-shadow: 1px 1px 2px black border-radius: 4px;
+    text-shadow: 1px 1px 2px black;
 }
 
 .closebtn {
@@ -215,6 +217,7 @@ button:hover {
 }
 @media (max-width:449px) {
     .alert {
+        margin-top: 50px;
         width: 300px;
         height: 250px;
     }
