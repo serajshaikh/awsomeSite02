@@ -24,18 +24,18 @@ body .foott{
 }
 @media (max-width:500px) {
     .logo{
-        
+        padding-top: 10px;
         display:  block !important;
         padding-left:0px !important;
         margin-left: auto !important;
         margin-right: auto !important;
     }
     button.navbar-toggler{
-        margin-top: 2px;
+        margin-top: 0px;
         margin-right: 0px;
     }
     button.navbar-toggler.btn-outline-primary{
-        margin-top: 2px;
+        margin-top: 0px;
         margin-right: auto !important;
         margin-left: auto !important;
     }
